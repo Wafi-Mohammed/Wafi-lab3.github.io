@@ -16,8 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 -- CREATE DATABASE IF NOT EXISTS sales;
-create database if not exists sales;
-USE sales;
+
 
 
 --
