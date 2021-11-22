@@ -1,7 +1,15 @@
 const express = require("express");
+const session = require("express-session");
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: "keyboard cat",
+    resave: true,
+    saveUninitialized: true,
+  })
+);
 
 app.use(express.static("public"));
 
@@ -21,6 +29,10 @@ app.get("/login", (req, res) => {
 
 app.get("/register", (req, res) => {
   res.render("register");
+});
+
+app.get("/client", (req, res) => {
+  res.render("client");
 });
 
 const router = require("./routes/apis");

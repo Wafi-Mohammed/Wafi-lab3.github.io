@@ -1,5 +1,3 @@
-const { Client } = require("../models/entities.js");
-
 const loginControl = (request, response) => {
   const clientServices = require("../services/clientServices");
 
@@ -79,8 +77,8 @@ const registerControl = (request, response) => {
       response.send(
         `Successful registration ${client.contact} (ID.${client.num_client})!`
       );
+      response.end();
     }
-    response.end();
   });
 };
 

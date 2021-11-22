@@ -19,7 +19,7 @@ const searchIDService = function (reference, callback) {
     if (rows.length == 0) {
       console.log("Unkown product!");
       let product = null;
-      callback(null, product);
+      calback(null, product);
     } else {
       //rreturn the retrieved product
       callback(null, rows[0]);
@@ -34,7 +34,7 @@ const searchCategoryService = function (category, callback) {
     if (rows.length == 0) {
       //no products
       console.log(`No product in category ${category}!`);
-      callback(null, rows);
+      calback(null, rows);
     } else {
       //return the rows
       callback(null, rows);
