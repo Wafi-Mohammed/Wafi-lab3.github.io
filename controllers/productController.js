@@ -16,7 +16,7 @@ const getProductByID = (request, response) => {
 const getProductsByCategory = (request, response) => {
   const catalogServices = require("../services/productServices");
   let reference = request.params.category;
-  catalogServices.searchCategoryService(category, function (err, rows) {
+  catalogServices.searchCategoryService(reference, function (err, rows) {
     response.json(rows);
     response.end();
   });
