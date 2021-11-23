@@ -11,8 +11,9 @@ const router = express.Router();
 router.get("/api/catalogue", productController.getCatalogue);
 router.get("/api/article/:id", productController.getProductByID);
 
-router.get("/api/login", clientController.loginControl);
-router.get("/api/register", clientController.registerControl);
+router.post("/api/login", clientController.loginControl);
+router.post("/api/register", clientController.registerControl);
+router.get("/api/clients", clientController.getClient);
 
 //export router
 module.exports = router;

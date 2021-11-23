@@ -1,4 +1,5 @@
-const clientDAO = require("../daos/clientDAO");
+const { Client } = require("../models/entities");
+const clientDAO = require("../db/clientDAO");
 const bcrypt = require("bcryptjs");
 
 const loginService = (typedUsername, typedPassword, callback) => {
@@ -83,44 +84,14 @@ const registerService = (client, callback) => {
 
 const searchService = function (callback) {
   //to be completed
-  clientDAO.find(function (err, rows) {
-    if (err) {
-      throw err;
-    }
-    if (rows.length == 0) {
-      console.log("No products!");
-    } else {
-      callback(null, rows);
-    }
-  });
 };
 
 const searchNumclientService = function (num_client, callback) {
   //to be completed
-  clientDAO.findByNumclient(num_client, function (err, rows) {
-    if (err) {
-      throw err;
-    }
-    if (rows.length == 0) {
-      console.log("No products!");
-    } else {
-      callback(null, rows);
-    }
-  });
 };
 
 const deleteService = function (num_client, callback) {
   //to be completed
-  clientDAO.findByNumclient(num_client, function (err, rows) {
-    if (err) {
-      throw err;
-    }
-    if (rows.length == 0) {
-      console.log("No products!");
-    } else {
-      clientDAO.deleteClient(num_client, callback);
-    }
-  });
 };
 
 module.exports = {
